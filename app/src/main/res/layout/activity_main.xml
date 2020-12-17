@@ -143,6 +143,19 @@
             app:buttonTint="#FFFFFF" />
     </RadioGroup>
 
+    <!--Skier Type Info Button-->
+    <TextView
+        android:id="@+id/typeInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/bggray"
+        android:text="@string/moreInfo"
+        android:textSize="5pt"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        app:layout_constraintLeft_toLeftOf="@+id/SkierTypeBox"
+        app:layout_constraintBottom_toTopOf="@+id/SkierTypeBox"/>
 
     <!--Height-->
     <com.google.android.material.textfield.TextInputLayout
@@ -151,7 +164,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:hint="@string/enterHeight"
@@ -191,7 +204,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:hint="@string/enterWeight"
@@ -230,7 +243,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:hint="@string/enterAge"
@@ -260,6 +273,20 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+    <!--BSL Info Button-->
+    <TextView
+        android:id="@+id/bslInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/bggray"
+        android:text="@string/moreInfo"
+        android:textSize="5pt"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        app:layout_constraintLeft_toLeftOf="@+id/tileditBSL"
+        app:layout_constraintBottom_toTopOf="@+id/tileditBSL"/>
+
     <!--Boot Sole Length-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tileditBSL"
@@ -272,7 +299,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:textColorHint="@color/white"
         app:boxBackgroundColor="#3C3C3C"
         app:boxStrokeColor="@null"

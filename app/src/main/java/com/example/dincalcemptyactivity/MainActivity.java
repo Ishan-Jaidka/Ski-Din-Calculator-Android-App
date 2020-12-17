@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected Button calculateButton;
     protected ToggleButton unitsButton;
     protected EditText editHeight, editWeight, editAge, editBSL;
-    protected TextView dinString, errorString, skierTypeBox, clearForm;
+    protected TextView dinString, errorString, skierTypeBox, clearForm, typeInfo, bslInfo;
     protected RadioGroup skierTypeGroup;
     protected RadioButton type0, type1, type2, type3, type4;
     protected TextInputLayout tileditHeight, tileditWeight, tileditAge, tileditBSL;
@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         errorString = (TextView) findViewById(R.id.errorString);
         skierTypeBox = (TextView) findViewById(R.id.SkierTypeBox);
         clearForm = (TextView) findViewById(R.id.clearForm);
+        typeInfo = (TextView) findViewById(R.id.typeInfo);
+        bslInfo = (TextView) findViewById(R.id.bslInfo);
         tileditAge = (TextInputLayout) findViewById(R.id.tileditAge);
         tileditBSL = (TextInputLayout) findViewById(R.id.tileditBSL);
         tileditWeight = (TextInputLayout) findViewById(R.id.tileditWeight);
@@ -193,6 +195,24 @@ public class MainActivity extends AppCompatActivity {
                 type4.setError(null);
             }
         });
+
+        //opens BSL information on touch
+        bslInfo.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                openBslInfo();
+                return false;
+            }
+        });
+
+        //opens Skier Type information on touch
+        typeInfo.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                openTypeInfo();
+                return false;
+            }
+        });
     }
 
     protected int getSkierType(){
@@ -259,5 +279,13 @@ public class MainActivity extends AppCompatActivity {
         editBSL.setError(null);
 
         bruh.setDefault();
+    }
+
+    public void openBslInfo(){
+        startActivity(new Intent(this, BslInfo.class));
+    }
+
+    public void openTypeInfo(){
+        startActivity(new Intent(this, TypeInfo.class));
     }
 }
