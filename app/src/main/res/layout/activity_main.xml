@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mybg"
+        android:layout_gravity="fill"
+        android:scaleType="centerCrop"/>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:alpha="0.8">
+
+
+    <!--Units Label-->
+    <TextView
+        android:id="@+id/unitText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/units"
+        android:background="@drawable/rounded_bg"
+        android:textColor="@color/white"
+        android:textSize="6pt"
+        app:layout_constraintBottom_toTopOf="@+id/unitsButton"
+        app:layout_constraintRight_toRightOf="@+id/unitsButton"/>
+
+    <!--Units Button-->
+    <ToggleButton
+        android:id="@+id/unitsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_button"
+        app:backgroundTint="@drawable/rounded_button"
+        android:textOff="@string/standard"
+        android:textOn="@string/metric"
+        android:textSize="6pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--Skier Type Text-->
+    <TextView
+        android:id="@+id/SkierTypeBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/skierType"
+        android:background="@drawable/rounded_top"
+        android:textColor="@color/white"
+        android:textSize="8pt"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unitsButton" />
+
+    <!--Skier Type Button Group-->
+    <RadioGroup
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/skierTypeGroup"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:orientation="horizontal"
+        android:layout_gravity='center_horizontal'
+        android:gravity='center_horizontal'
+        android:background="@drawable/rounded_bottom"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SkierTypeBox">
+
+        <RadioButton
+            android:id="@+id/skierType0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/t0"
+            android:textColor="@color/white"
+            android:textSize="8pt"
+            app:buttonTint="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/skierType1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:text="@string/t1"
+            android:textColor="@color/white"
+            android:textSize="8pt"
+            app:buttonTint="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/skierType2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:text="@string/t2"
+            android:textColor="@color/white"
+            android:textSize="8pt"
+            app:buttonTint="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/skierType3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:text="@string/t3"
+            android:textColor="@color/white"
+            android:textSize="8pt"
+            app:buttonTint="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/skierType4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:text="@string/t4"
+            android:textColor="@color/white"
+            android:textSize="8pt"
+            app:buttonTint="#FFFFFF" />
+    </RadioGroup>
+
+
+    <!--Height-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tileditHeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:hint="@string/enterHeight"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="10pt"
+        app:boxBackgroundColor="#3C3C3C"
+        app:boxStrokeColor="@color/black"
+        app:errorEnabled="true"
+        app:boxStrokeErrorColor="@color/error"
+        app:errorIconTint="@color/error"
+        app:errorTextColor="@color/error"
+        app:hintTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skierTypeGroup"
+        app:placeholderTextColor="@color/white">
+
+        <EditText
+            android:id="@+id/editHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="false"
+            android:background="@null"
+            android:ems="10"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textSize="10pt"
+            app:hintTextColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--Weight-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tileditWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:hint="@string/enterWeight"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="10pt"
+        app:boxBackgroundColor="#3C3C3C"
+        app:boxStrokeColor="@color/black"
+        app:boxStrokeErrorColor="@color/error"
+        app:errorIconTint="@color/error"
+        app:errorTextColor="@color/error"
+        app:errorEnabled="true"
+        app:hintTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tileditHeight">
+
+        <EditText
+            android:id="@+id/editWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="false"
+            android:background="@null"
+            android:ems="10"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textSize="10pt"
+            app:hintTextColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--Age-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tileditAge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:hint="@string/enterAge"
+        android:textColor="@color/white"
+        android:textSize="10pt"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="#3C3C3C"
+        app:boxStrokeColor="@color/black"
+        app:boxStrokeErrorColor="@color/error"
+        app:errorIconTint="@color/error"
+        app:errorTextColor="@color/error"
+        app:errorEnabled="true"
+        app:hintTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tileditWeight">
+
+        <EditText
+            android:id="@+id/editAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="false"
+            android:ems="10"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textSize="10pt" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--Boot Sole Length-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tileditBSL"
+        android:hint="@string/bsl"
+        android:textSize="10pt"
+        android:textColor="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="5dp"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="#3C3C3C"
+        app:boxStrokeColor="@color/black"
+        app:boxStrokeErrorColor="@color/error"
+        app:errorIconTint="@color/error"
+        app:errorTextColor="@color/error"
+        app:hintTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tileditAge"
+        app:errorEnabled="true" >
+
+        <EditText
+            android:id="@+id/editBSL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:textSize="10pt"
+            android:textColor="@color/white"
+            android:autofillHints="false"
+            android:imeOptions="actionSend"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--Calculate Button-->
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/calc"
+        android:textColor="@color/white"
+        android:textSize="6pt"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@drawable/rounded_button"
+        app:backgroundTint="@color/bggray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tileditHeight"
+        app:layout_constraintTop_toBottomOf="@+id/tileditBSL" />
+
+
+    <!--DIN Result-->
+    <TextView
+        android:id="@+id/dinString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="40dp"
+        android:textColor="@color/black"
+        android:background="@null"
+        android:textSize="14pt"
+        android:textStyle="bold"
+        android:alpha="1"
+        app:layout_constraintStart_toEndOf="@+id/calculateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/calculateButton"
+        app:layout_constraintBottom_toBottomOf="@+id/calculateButton"/>
+
+
+    <!--Error Box-->
+    <TextView
+        android:id="@+id/errorString"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/error"
+        android:textSize="8pt"
+        android:alpha="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculateButton"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+</FrameLayout>

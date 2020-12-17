@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Ski DIN Calculator</string>
+    <string name="enterHeight">Enter Height (inches)</string>
+    <string name="enterHeightMetric">Enter Height (cm)</string>
+    <string name="enterWeight">Enter Weight (lbs)</string>
+    <string name="enterWeightMetric">Enter Weight (kg)</string>
+    <string name="enterAge">Enter Age</string>
+    <string name="calc">Calculate DIN</string>
+    <string name="t0">-1</string>
+    <string name="t1">1</string>
+    <string name="t2">2</string>
+    <string name="t3">3</string>
+    <string name="t4">3+</string>
+    <string name="skierType">Skier Type:</string>
+    <string name="metric">Metric</string>
+    <string name="standard">Standard</string>
+    <string name="bsl">Enter Boot Sole Length (mm)</string>
+    <string name="units">Units: </string>
+    <string name="agree">Accept</string>
+    <string name="agreeTitle">Disclaimer</string>
+    <string name="agreement">All the shit I agree to.</string>
+    <string name="info">info</string>
+    <string name="clearForm">Start Over</string>
+</resources>
