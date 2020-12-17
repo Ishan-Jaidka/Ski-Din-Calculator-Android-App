@@ -2,6 +2,7 @@ package com.example.dincalcemptyactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected Button calculateButton;
     protected ToggleButton unitsButton;
     protected EditText editHeight, editWeight, editAge, editBSL;
-    protected TextView dinString, errorString, skierTypeBox;
+    protected TextView dinString, errorString, skierTypeBox, clearForm;
     protected RadioGroup skierTypeGroup;
     protected RadioButton type0, type1, type2, type3, type4;
     protected TextInputLayout tileditHeight, tileditWeight, tileditAge, tileditBSL;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         dinString = (TextView) findViewById(R.id.dinString);
         errorString = (TextView) findViewById(R.id.errorString);
         skierTypeBox = (TextView) findViewById(R.id.SkierTypeBox);
+        clearForm = (TextView) findViewById(R.id.clearForm);
         tileditAge = (TextInputLayout) findViewById(R.id.tileditAge);
         tileditBSL = (TextInputLayout) findViewById(R.id.tileditBSL);
         tileditWeight = (TextInputLayout) findViewById(R.id.tileditWeight);
@@ -69,6 +71,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 calculate(v);
+                return false;
+            }
+        });
+
+        //clears all fields and textViews when "Clear Form" is touched
+        clearForm.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                bruh.setDefault();
+                clearAllFields();
                 return false;
             }
         });
@@ -225,5 +237,27 @@ public class MainActivity extends AppCompatActivity {
             dinString.setText("");
             errorString.setText("Please enter valid data and try again.");
         }
+    }
+
+    //clears all fields and resets skier data
+    public void clearAllFields(){
+        //startActivity(new Intent(this, MainActivity.class));
+        skierTypeGroup.clearCheck();
+        editHeight.getText().clear();
+        editWeight.getText().clear();
+        editAge.getText().clear();
+        editBSL.getText().clear();
+
+        dinString.setText("");
+        errorString.setText("");
+
+        clearForm.requestFocus();
+
+        editHeight.setError(null);
+        editWeight.setError(null);
+        editAge.setError(null);
+        editBSL.setError(null);
+
+        bruh.setDefault();
     }
 }
