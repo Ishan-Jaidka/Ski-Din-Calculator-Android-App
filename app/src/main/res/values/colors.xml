@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bggray">#3C3C3C</color>
     <color name="error">#ff4550</color>
+    <color name="esred">#FF3333</color>
+    <color name="esteal">#34BFD3</color>
+    <color name="pptgreen">#ACD433</color>
 </resources>

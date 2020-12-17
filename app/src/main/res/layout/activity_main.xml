@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,9 +13,7 @@
         android:layout_gravity="fill"
         android:scaleType="centerCrop"/>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -159,7 +159,7 @@
         android:textColorHint="@color/white"
         android:textSize="10pt"
         app:boxBackgroundColor="#3C3C3C"
-        app:boxStrokeColor="@color/black"
+        app:boxStrokeColor="@null"
         app:errorEnabled="true"
         app:boxStrokeErrorColor="@color/error"
         app:errorIconTint="@color/error"
@@ -199,7 +199,7 @@
         android:textColorHint="@color/white"
         android:textSize="10pt"
         app:boxBackgroundColor="#3C3C3C"
-        app:boxStrokeColor="@color/black"
+        app:boxStrokeColor="@null"
         app:boxStrokeErrorColor="@color/error"
         app:errorIconTint="@color/error"
         app:errorTextColor="@color/error"
@@ -238,7 +238,7 @@
         android:textSize="10pt"
         android:textColorHint="@color/white"
         app:boxBackgroundColor="#3C3C3C"
-        app:boxStrokeColor="@color/black"
+        app:boxStrokeColor="@null"
         app:boxStrokeErrorColor="@color/error"
         app:errorIconTint="@color/error"
         app:errorTextColor="@color/error"
@@ -275,7 +275,7 @@
         android:layout_marginTop="5dp"
         android:textColorHint="@color/white"
         app:boxBackgroundColor="#3C3C3C"
-        app:boxStrokeColor="@color/black"
+        app:boxStrokeColor="@null"
         app:boxStrokeErrorColor="@color/error"
         app:errorIconTint="@color/error"
         app:errorTextColor="@color/error"
@@ -305,12 +305,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="50dp"
+        android:alpha="1"
+        android:background="@drawable/rounded_button"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:text="@string/calc"
         android:textColor="@color/white"
         android:textSize="6pt"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:background="@drawable/rounded_button"
         app:backgroundTint="@color/bggray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/tileditHeight"

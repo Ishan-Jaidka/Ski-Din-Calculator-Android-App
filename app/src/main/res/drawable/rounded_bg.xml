@@ -5,9 +5,9 @@
     <solid   android:color="@color/bggray"/>
 
     <corners
-        android:topRightRadius="4dip"
-        android:topLeftRadius="4dip"
-        android:bottomRightRadius="1dip"
-        android:bottomLeftRadius="1dip"
+        android:topRightRadius="2dip"
+        android:topLeftRadius="2dip"
+        android:bottomRightRadius="2dip"
+        android:bottomLeftRadius="2dip"
         />
 </shape>
