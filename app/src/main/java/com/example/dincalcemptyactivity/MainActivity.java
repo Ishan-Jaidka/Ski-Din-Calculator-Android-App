@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 metric = isChecked;
                 editWeight.requestFocus();
                 editHeight.requestFocus();
+                calculateButton.requestFocus();
             }
         });
 
