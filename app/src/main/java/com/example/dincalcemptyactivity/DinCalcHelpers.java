@@ -1,5 +1,6 @@
 package com.example.dincalcemptyactivity;
 
+import android.content.Intent;
 import android.widget.TextView;
 import android.content.res.AssetManager;
 import android.widget.Toast;
@@ -7,7 +8,9 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class ReadTxtToTextView {
+public class DinCalcHelpers {
+
+    //sets the text of the given TextView to the contents of the given file
     public static void readFiletoTextView(android.content.Context c, TextView t, String filename) {
         StringBuilder text = new StringBuilder();
         BufferedReader reader = null;

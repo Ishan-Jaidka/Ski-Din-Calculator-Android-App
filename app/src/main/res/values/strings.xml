@@ -17,8 +17,10 @@
     <string name="bsl">Enter Boot Sole Length (mm)</string>
     <string name="units">Units: </string>
     <string name="agree">Accept</string>
-    <string name="agreeTitle">Disclaimer</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="agreeTitle">User Agreement</string>
     <string name="agreement">All the shit I agree to.</string>
+    <string name="fullUA">View User Agreement</string>
     <string name="info">info</string>
     <string name="clearForm">Start Over</string>
     <string name="moreInfo">What is this?</string>

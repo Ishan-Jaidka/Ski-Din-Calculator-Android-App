@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/missioncliffs"
+        android:alpha="0.9"
+        android:layout_gravity="fill"
+        android:scaleType="centerCrop"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".FullTextUA">
+
+        <TextView
+            android:id="@+id/fullAgreeTitle"
+            android:text="@string/agreeTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:textStyle="bold"
+            android:textSize="8pt"
+            android:gravity="center"
+            android:alpha="0.8"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:background="@drawable/rounded_bg"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <ScrollView
+            android:id="@+id/fullAgreeScroll"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:alpha="0.8"
+            app:layout_constraintTop_toBottomOf="@+id/fullAgreeTitle"
+            app:layout_constraintBottom_toTopOf="@+id/fullAgreeButton"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:id="@+id/fullAgreement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg"
+            android:gravity="center"
+            android:text="@string/agreement"
+            android:textColor="@color/white"
+            android:textSize="6pt"
+            android:alpha="0.8"/>
+
+        </ScrollView>
+
+
+        <Button
+            android:id="@+id/fullAgreeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginRight="80dp"
+            android:text="@string/agree"
+            android:alpha="0.8"
+            android:textColor="@color/white"
+            android:textSize="6pt"
+            app:backgroundTint="@color/bggray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <!--User Agreement button textview:
+        <TextView
+            android:id="@+id/uaButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/fullUA"
+            android:alpha="0.8"
+            android:textColor="@color/bggray"
+            android:textSize="6pt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/agreeButton"
+            app:layout_constraintRight_toLeftOf="@id/agreeButton"
+            app:layout_constraintLeft_toLeftOf="parent"/>-->
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
