@@ -101,12 +101,15 @@ public class MainActivity extends AppCompatActivity {
                 } else {    //standard units
                     tileditHeight.setHint("Enter Height (inches)");
                     tileditWeight.setHint("Enter Weight (lbs)");
+
                     /*if(!editHeight.getText().toString().isEmpty())
                         editHeight.setText((int)(Double.parseDouble(editHeight.getText().toString())/2.54));
                     if(!editWeight.getText().toString().isEmpty())
                         editWeight.setText((int)(Double.parseDouble(editHeight.getText().toString())*2.2));*/
                 }
                 metric = isChecked;
+                editWeight.requestFocus();
+                editHeight.requestFocus();
             }
         });
 
