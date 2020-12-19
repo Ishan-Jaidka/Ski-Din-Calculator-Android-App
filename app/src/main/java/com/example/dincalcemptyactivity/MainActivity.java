@@ -2,13 +2,18 @@ package com.example.dincalcemptyactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -30,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected RadioButton type0, type1, type2, type3, type4;
     protected TextInputLayout tileditHeight, tileditWeight, tileditAge, tileditBSL;
     protected boolean metric;
+    protected Dialog infoScreen;
     Skier bruh;
 
     @Override
@@ -64,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         type2 = (RadioButton) findViewById(R.id.skierType2);
         type3 = (RadioButton) findViewById(R.id.skierType3);
         type4 = (RadioButton) findViewById(R.id.skierType4);
+        infoScreen = new Dialog(this);
 
         metric = false;
         bruh = new Skier();
@@ -213,6 +220,7 @@ public class MainActivity extends AppCompatActivity {
         typeInfo.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                //showPopup(v, getResources().getDrawable(R.drawable.skiertype), 100);
                 openTypeInfo();
                 return false;
             }
@@ -291,5 +299,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void openTypeInfo(){
         startActivity(new Intent(this, TypeInfo.class));
+    }
+
+    public void showPopup(View v, Drawable pic, int pos){
+        //final float scale = getBaseContext().getResources().getDisplayMetrics().density;
+        infoScreen.setContentView(R.layout.activity_typeinfo);
+        ImageView infoPic = (ImageView) findViewById(R.id.infoPic);
+        TextView xClose = (TextView) findViewById(R.id.xbutton);
+
+        //ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
+        //infoPic.setImageDrawable(pic);
+
+        //params.topMargin = (int)(pos * scale + 0.5f);
+        //v.setLayoutParams(params);
+
+
+        xClose.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                infoScreen.dismiss();
+                return false;
+            }
+        });
+
+        infoScreen.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.transparent)));
+        infoScreen.show();
+
     }
 }
