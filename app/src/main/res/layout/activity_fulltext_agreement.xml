@@ -23,26 +23,24 @@
             android:text="@string/agreeTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
             android:textStyle="bold"
             android:textSize="8pt"
             android:gravity="center"
             android:alpha="0.8"
             android:focusableInTouchMode="true"
             android:focusable="true"
-            android:background="@drawable/rounded_bg"
+            android:background="@drawable/rounded_top"
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"/>
+            app:layout_constraintRight_toRightOf="@id/fullAgreeScroll"
+            app:layout_constraintLeft_toLeftOf="@id/fullAgreeScroll"/>
 
         <ScrollView
             android:id="@+id/fullAgreeScroll"
             android:layout_height="0dp"
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -56,12 +54,11 @@
             android:id="@+id/fullAgreement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_bg"
+            android:background="@drawable/rounded_bottom"
             android:gravity="center"
             android:text="@string/agreement"
             android:textColor="@color/white"
-            android:textSize="6pt"
-            android:alpha="0.8"/>
+            android:textSize="6pt"/>
 
         </ScrollView>
 

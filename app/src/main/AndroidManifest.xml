@@ -28,6 +28,9 @@
 
         <activity android:name=".FullTextUA"/>
 
+        <activity android:name=".TypeInfo" />
+        <activity android:name=".BslInfo" />
+
     </application>
 
 </manifest>

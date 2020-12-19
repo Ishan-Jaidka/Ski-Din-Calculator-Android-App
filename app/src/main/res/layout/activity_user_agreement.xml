@@ -75,6 +75,7 @@
             android:id="@+id/disclaimer"
             android:gravity="center"
             android:text="Disclaimer"
+            android:textStyle="bold"
             android:textSize="8pt"
             android:textColor="@color/white"
             android:background="@drawable/rounded_top"
