@@ -1,9 +1,12 @@
 package com.example.dincalcemptyactivity;
 
+import androidx.annotation.LayoutRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -12,6 +15,7 @@ import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     protected RadioButton type0, type1, type2, type3, type4;
     protected TextInputLayout tileditHeight, tileditWeight, tileditAge, tileditBSL;
     protected boolean metric;
-    protected Dialog infoScreen;
+    protected Dialog infoScreen, dialog;
     Skier bruh;
 
     @Override
@@ -211,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
         bslInfo.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                openBslInfo();
+                popupDialogInfo(R.layout.activity_bslinfo);
                 return false;
             }
         });
@@ -221,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 //showPopup(v, getResources().getDrawable(R.drawable.skiertype), 100);
-                openTypeInfo();
+                popupDialogInfo(R.layout.activity_typeinfo);
                 return false;
             }
         });
@@ -293,37 +297,30 @@ public class MainActivity extends AppCompatActivity {
         bruh.setDefault();
     }
 
-    public void openBslInfo(){
-        startActivity(new Intent(this, BslInfo.class));
-    }
+    //call with popupDialogInfo(R.layout.xxxxxxxxx) which is content layout ID
+    public void popupDialogInfo(@LayoutRes int layoutID){
+        dialog = new Dialog(MainActivity.this);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.fadeinout; //fades in and out
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //dialog.getWindow().setBackgroundDrawableResource(R.color.transparent);
+        dialog.setContentView(layoutID);
 
-    public void openTypeInfo(){
-        startActivity(new Intent(this, TypeInfo.class));
-    }
-
-    public void showPopup(View v, Drawable pic, int pos){
-        //final float scale = getBaseContext().getResources().getDisplayMetrics().density;
-        infoScreen.setContentView(R.layout.activity_typeinfo);
-        ImageView infoPic = (ImageView) findViewById(R.id.infoPic);
-        TextView xClose = (TextView) findViewById(R.id.xbutton);
-
-        //ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
-        //infoPic.setImageDrawable(pic);
-
-        //params.topMargin = (int)(pos * scale + 0.5f);
-        //v.setLayoutParams(params);
-
+        TextView xClose = (dialog).findViewById(R.id.xbutton);
 
         xClose.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                infoScreen.dismiss();
+                dialog.dismiss();
                 return false;
             }
         });
 
-        infoScreen.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.transparent)));
-        infoScreen.show();
+        dialog.setCanceledOnTouchOutside(true);
 
+        dialog.show();
+    }
+
+    public void closeOnClick(View v){
+        dialog.dismiss();
     }
 }
