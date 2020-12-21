@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HackInfoPopup"
+    android:background="@color/bggray">
+
+
+<!--SkierType Upper ScrollView-->
+    <ScrollView
+        android:id="@+id/topScrollView"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_margin="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomScrollView"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--SkierType Title-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/typeTitle"
+                android:layout_marginTop="10dp"
+                android:text="Skier Type:"
+                android:textSize="8pt"
+                android:textStyle="bold"
+                android:textColor="@color/bggray"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                android:id="@+id/typeDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="6pt"
+                android:textColor="@color/bggray"
+                android:padding="5dp"
+                android:gravity="center"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/typeTitle"/>
+
+            <HorizontalScrollView
+                android:id="@+id/innerTypeScrollView"
+                android:layout_height="300dp"
+                android:layout_width="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/typeDesc"
+                android:background="@color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/skierability"
+                        android:adjustViewBounds="true"
+                        android:layout_margin="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+<!--BSL Lower ScrollView-->
+    <ScrollView
+        android:id="@+id/bottomScrollView"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_margin="40dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/topScrollView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/bslTitle"
+                android:layout_marginTop="10dp"
+                android:text="Boot Sole Length:"
+                android:textSize="8pt"
+                android:textColor="@color/bggray"
+                android:textStyle="bold"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                android:id="@+id/bslDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="6pt"
+                android:textColor="@color/bggray"
+                android:padding="5dp"
+                android:gravity="center"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bslTitle"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bslpics"
+                android:adjustViewBounds="true"
+                android:layout_margin="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bslDesc"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+<!--x buttons-->
+    <TextView
+        android:id="@+id/xbutton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:text="X"
+        android:textStyle="bold"
+        android:textColor="@color/bggray"
+        app:layout_constraintTop_toTopOf="@id/topScrollView"
+        app:layout_constraintRight_toRightOf="@id/topScrollView"
+        android:gravity="center"
+        android:background="@drawable/circlebackground"/>
+
+    <TextView
+        android:id="@+id/xbutton2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:text="X"
+        android:textStyle="bold"
+        android:textColor="@color/bggray"
+        app:layout_constraintTop_toTopOf="@id/bottomScrollView"
+        app:layout_constraintRight_toRightOf="@id/bottomScrollView"
+        android:gravity="center"
+        android:background="@drawable/circlebackground"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

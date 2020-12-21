@@ -28,8 +28,10 @@
 
         <activity android:name=".FullTextUA"/>
 
-        <activity android:name=".TypeInfo" />
-        <activity android:name=".BslInfo" />
+        <activity android:name=".HackInfoPopup"/>
+
+        <!--<activity android:name=".TypeInfo" />
+        <activity android:name=".BslInfo" />-->
 
     </application>
 

@@ -203,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Skier Type Radio Button Group checker, removes error status when changed
         skierTypeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -215,7 +216,7 @@ public class MainActivity extends AppCompatActivity {
         bslInfo.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                popupDialogInfo(R.layout.activity_bslinfo);
+                openNewActivity(HackInfoPopup.class);
                 return false;
             }
         });
@@ -225,10 +226,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 //showPopup(v, getResources().getDrawable(R.drawable.skiertype), 100);
-                popupDialogInfo(R.layout.activity_typeinfo);
+                //popupDialogInfo(R.layout.activity_typeinfo);
+                openNewActivity(HackInfoPopup.class);
                 return false;
             }
         });
+    }
+
+    //helper method, opens new activity when passed the class for that activity
+    private void openNewActivity(Class<?> className) {
+        startActivity(new Intent(this, className));
     }
 
     protected int getSkierType(){
@@ -289,38 +296,38 @@ public class MainActivity extends AppCompatActivity {
 
         clearForm.requestFocus();
 
-        editHeight.setError(null);
-        editWeight.setError(null);
-        editAge.setError(null);
-        editBSL.setError(null);
+        tileditHeight.setError(null);
+        tileditWeight.setError(null);
+        tileditAge.setError(null);
+        tileditBSL.setError(null);
 
         bruh.setDefault();
     }
 
-    //call with popupDialogInfo(R.layout.xxxxxxxxx) which is content layout ID
-    public void popupDialogInfo(@LayoutRes int layoutID){
-        dialog = new Dialog(MainActivity.this);
-        dialog.getWindow().getAttributes().windowAnimations = R.style.fadeinout; //fades in and out
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //dialog.getWindow().setBackgroundDrawableResource(R.color.transparent);
-        dialog.setContentView(layoutID);
-
-        TextView xClose = (dialog).findViewById(R.id.xbutton);
-
-        xClose.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                dialog.dismiss();
-                return false;
-            }
-        });
-
-        dialog.setCanceledOnTouchOutside(true);
-
-        dialog.show();
-    }
-
-    public void closeOnClick(View v){
-        dialog.dismiss();
-    }
+//    //call with popupDialogInfo(R.layout.xxxxxxxxx) which is content layout ID
+//    public void popupDialogInfo(@LayoutRes int layoutID){
+//        dialog = new Dialog(MainActivity.this);
+//        dialog.getWindow().getAttributes().windowAnimations = R.style.fadeinout; //fades in and out
+//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        //dialog.getWindow().setBackgroundDrawableResource(R.color.transparent);
+//        dialog.setContentView(layoutID);
+//
+//        TextView xClose = (dialog).findViewById(R.id.xbutton);
+//
+//        xClose.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                dialog.dismiss();
+//                return false;
+//            }
+//        });
+//
+//        dialog.setCanceledOnTouchOutside(true);
+//
+//        dialog.show();
+//    }
+//
+//    public void closeOnClick(View v){
+//        dialog.dismiss();
+//    }
 }
