@@ -216,7 +216,7 @@ public class MainActivity extends AppCompatActivity {
         bslInfo.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                openNewActivity(HackInfoPopup.class);
+                openNewActivity(HackBSLInfo.class);
                 return false;
             }
         });

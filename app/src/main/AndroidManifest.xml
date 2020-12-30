@@ -30,6 +30,8 @@
 
         <activity android:name=".HackInfoPopup"/>
 
+        <activity android:name=".HackBSLInfo"/>
+
         <!--<activity android:name=".TypeInfo" />
         <activity android:name=".BslInfo" />-->
 
